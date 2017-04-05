@@ -147,7 +147,7 @@ void checkStage(int Stage)
 	}
 	int diff = abs(Stage - current_stage);
 	moveArray.position.x=direction;
-	moveArray.position.y=diff*0;
+	moveArray.position.y=diff*200;
 }
 
 
