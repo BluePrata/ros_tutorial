@@ -52,13 +52,13 @@ int direction = 0;
 //function prototypes
 void checkStage(int Stage);
 void currentStageis(long StepVal);
-void MotorCb( const std_msgs::UInt16& motor_msg);
+void MotorCb( const std_msgs::Int16& motor_msg);
 
 
 
 ros::NodeHandle nh;
 ros::Publisher motorPub("/motor", &stageMsg);
-ros::Subscriber<std_msgs::UInt16> motorSub("cmdmotor", MotorCb);
+ros::Subscriber<std_msgs::Int16> motorSub("cmdmotor", MotorCb);
 
 void setup()
 {
@@ -110,7 +110,7 @@ void loop()
 
 
 //callback function prototypes
-void MotorCb( const std_msgs::UInt16& motor_msg)
+void MotorCb( const std_msgs::Int16& motor_msg)
 {
     	digitalWrite(13, LOW);
 
@@ -147,11 +147,8 @@ void checkStage(int Stage)
 	{
 		direction = 1;
 	}
-
 	int diff = abs(Stage - current_stage);
 	current_stage = Stage;
-	
-	
 	moveArray.position.x=direction;
 	moveArray.position.y=diff*6.667;
 }
