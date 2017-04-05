@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/emt_tecksang/tutorial/src/message/devel -DCMAKE_INSTALL_PREFIX=/home/emt_tecksang/tutorial/src/message/install -G Unix Makefiles
